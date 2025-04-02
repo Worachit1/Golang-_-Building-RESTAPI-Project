@@ -2,22 +2,13 @@ package main
 
 import "fmt"
 
-func inc() int {
-	return 1
-}
-
-func curr() int {
-	return 2
-}
-
-func adder() (func() int, func() int) {
-	return inc, curr
+func show(sk []string) {
+	fmt.Printf("show: %#v\n", sk)
 }
 
 func main() {
-	i, c := adder()
-	fmt.Println(i)
-	fmt.Println(c())
-}
+	skills := []string{"JS", "GO", "Python"}
+	show(skills)
 
-//★
+	show(skills[1:3])
+}
